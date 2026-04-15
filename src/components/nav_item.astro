@@ -1,0 +1,19 @@
+---
+    const { name, link } = Astro.props;
+---
+
+<a class="nav_item" href={link}>{name}</a>
+
+<style>
+    a.nav_item {
+        color: white;
+        margin-right: 40px;
+        text-decoration: none;
+
+        &:hover {
+            color: #F4BB46;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+    }
+</style>
