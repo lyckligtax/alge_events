@@ -3,11 +3,14 @@ import NavItem from "./nav_item.astro"
 import Logo from "../assets/logo.png"
 ---
 <nav>
-    <img id="logo" src={Logo.src} />
-    <NavItem name="ÜBER UNS" link="#about"/>
-    <NavItem name="AUTHOREN" link="#speaker"/>
-    <NavItem name="LOCATION" link="#location"/>
-    <a class="ticketLink" href="#ticket">GET TICKET</a>
+    <div>
+        <img id="logo" src={Logo.src}/>
+        <NavItem name="ÜBER UNS" link="#about"/>
+        <NavItem name="DIE LESUNG" link="#lesung"/>
+        <NavItem name="AUTHOREN" link="#speaker"/>
+        <NavItem name="LOCATION" link="#location"/>
+        <a class="ticketLink" href="#tickets">SEI DABEI</a>
+    </div>
 </nav>
 
 <style>
@@ -18,15 +21,22 @@ import Logo from "../assets/logo.png"
         left: 0;
         background: none;
         width: 100%;
-        display: flex;
-        align-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        justify-content: right;
         font-size: 20px;
         text-decoration: none;
         font-weight: 500;
         padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > * {
+             display: flex;
+             align-content: center;
+             align-items: center;
+             box-sizing: border-box;
+             justify-content: right;
+             width: 100%;
+             max-width: var(--content-width);
+         }
     }
 
     #logo {
