@@ -15,7 +15,8 @@ import LogoRund from "../assets/logo_rund.png"
         & > section {
             width: 100%;
             max-width: var(--content-width);
-            padding: 60px 0;
+            padding: 60px 30px;
+            box-sizing: border-box;
         }
     }
 
@@ -44,6 +45,14 @@ import LogoRund from "../assets/logo_rund.png"
             & img {
                 height: 200px;
                 margin-right: 50px;
+            }
+
+            & .description {
+                & > div {
+                    margin-bottom: 20px;
+                }
+                line-height: 30px;
+                text-align: justify;
             }
         }
     }
@@ -122,44 +131,47 @@ import LogoRund from "../assets/logo_rund.png"
         <div>
             <img src={LogoRund.src}>
         </div>
-        <div>
+        <div class="description">
             <h2>Über den Verein</h2>
-            Wir sind ein gemeinnütziger Verein für die Förderung des öffentlichen Gesundheitswesens und der öffentlichen
-            Gesundheitspflege.<br>
-            <br>
-            Wir wollen den Menschen die Themen Infektionsschutz und luftübertragbare Infektionskrankheiten näher
-            bringen,
-            um:<br>
-            - das Thema in der Öffentlichkeit wieder präsenter zu machen<br>
-            - zu zeigen wie man sich einfach und effektiv schützen kann<br>
-            - zu zeigen wie man Infektionsschutz in den Alltag integrieren kann<br>
-            <br>
-            Das wollen wir durch direkte, ehrliche und Faktenbasierte Kommunikation erreichen und arbeiten dazu mit
-            anderen
-            Organisationen zusammen.
-        </div>
+            <div>
+                <a href="https://alge-hamburg.de">alge-hamburg.de</> | <a>Bluesky</a> | <a>Mastodon</a> | <a>Discord</a>
+            </div>
+            <div>Der ALGE e.V. ist ein gemeinnütziger Verein, der sich deutschlandweit für infektionssichere
+                Freizeitangebote und einen infektionssensiblen Alltag stark macht. Wir bieten regelmäßige virtuelle
+                Aktivitäten sowie Präsenz-Veranstaltungen mit individuell angepassten Infektionsschutzkonzepten (Tests,
+                Masken, Luftfilter, …).<br>
+                Wir wollen Menschen zusammenbringen, die sich aus vielfältigen Gründen vor Infektionen schützen wollen
+                oder müssen. Unser Ziel ist es, gemeinsam Infektionsschutz (vor-)zuleben und zu zeigen, wie
+                Infektionsschutz ein selbstverständlicher Teil von Freizeitaktivitäten sein kann.
+            </div>
+            <div>Wir bieten digitale Veranstaltungen wie:
+                <ul>
+                    <li>Brettspielabende</li>
+                    <li>Klönabende</li>
+                    <li>Kreativ-Cafés</li>
+                    <li>Brunch</li>
+                </ul>
+            </div>
+            <div>
+                und infektionssensible Präsenz-Veranstaltungen wie:
+                <ul>
+                    <li>Wander- und Klettergruppe</li>
+                    <li>Vernetzungstreffen</li>
+                    <li>Testessen zu Hamburgs besten Franzbrötchen</li>
+                    <li>Weihnachtsfeier</li>
+                    <li>Kinder-Freizeitangebote</li>
+                </ul>
+            </div>
     </section>
 </div>
 <div class="content" id="lesung">
     <section>
         <h2>Über die Lesung</h2>
-        <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-        </div>
-        <div>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </div>
-        <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-            amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </div>
-        <div>
-            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
-            feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-            delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer
-        </div>
+        <div><b>"Die verdrängte Pandemie - Linke Stimmen gegen den Pandemierevisionismus"</b> mit den Herausgebern Frédéric Valin und Paul Schubert.</div>
+        <div>Fast 7 Jahre ist es her, seit der erste Covid-19 Fall bei München entdeckt wurde und die tödliche Covid-19 Pandemie ihren Lauf genommen hat. Seit der Aufhebung der staatlichen Schutzmaßnahmen macht sich in allen politischen Lagern ein Pandemierevisionismus breit. Die Gefahren des Virus werden verharmlost, Gesundheitsschutz lächerlich gemacht, an Long Covid leidende Menschen werden stigmatisiert und die Bedürfnisse von vulnerablen Personen kommen in der Diskussion kaum mehr vor.</div>
+        <div>Die Herausgeber Frédéric Valin und Paul Schubert beleuchten in ihrem Sammelband „Die verdrängte Pandemie – Linke Stimmen gegen den Pandemierevisionismus“ mit Beiträgen von Autor*innen und Wissenschaftler*innen wie Natascha Strobl und Thomas Ebermann u.A. die Rolle von Behindertenfeindlichkeit und Sozialdarwinismus während und nach der Pandemie und fragen, wie gesellschaftliche Teilhabe für alle möglich bleibt. Dazu laden wir euch ganz herzlich zur Lesung mit den Herausgebern ein.</div>
+        <div>Neben einer kurzen Sozialgeschichte der Pandemie werden auch die Rolle des Staates während der Pandemie, die Zustände der Gesundheitssysteme und die mangelnde Versorgung für Long-Covid- und ME/ CFS-Patient*innen behandelt.</div>
+        <div>Der Eintritt ist frei, wir bitten allerdings um Anmeldung. Für die gesamte Veranstaltung gilt der <a>Code of Conduct</a> des ALGE e.V..</div>
     </section>
 </div>
 <div class="content" id="speaker">
@@ -171,15 +183,15 @@ import LogoRund from "../assets/logo_rund.png"
 <div class="content" id="location">
     <section>
         <iframe width="600" height="600"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=10.015896856784822%2C53.570139872306854%2C10.022092759609222%2C53.572170641497095&amp;layer=mapnik"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=9.941739141941072%2C53.557417871169264%2C9.946996271610262%2C53.559449251254975&amp;layer=mapnik"
                 style="border: none"></iframe>
         <div>
             <h2>Live Location</h2>
             <div class="address">
                 <div>
-                    CCC Hamburg<br>
-                    Lohmühlenpark 23a<br>
-                    22567 Hamburg
+                    CCC Hansestadt Hamburg e.V.<br>
+                    Zeiseweg 9<br>
+                    22765 Hamburg
                 </div>
                 <div>
                     Rollstuhlgerecht<br>
@@ -196,7 +208,7 @@ import LogoRund from "../assets/logo_rund.png"
 <div class="content" id="tickets">
     <section>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZms2m2rmUF-aA80KwWVOmTGgjLdBkkggm7E4knef6fAJbXQ/viewform?embedded=true"
-                width="800" height="660" frameborder="0">Wird geladen…
+                width="800" height="670" frameborder="0">Wird geladen…
         </iframe>
     </section>
 </div>

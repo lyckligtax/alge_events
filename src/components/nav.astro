@@ -19,7 +19,7 @@ import Logo from "../assets/logo.png"
         position: fixed;
         top: 0;
         left: 0;
-        background: none;
+        background: black;
         width: 100%;
         font-size: 20px;
         text-decoration: none;
@@ -61,18 +61,3 @@ import Logo from "../assets/logo.png"
         margin-right: 20px;
     }
 </style>
-
-<script>
-    const scrollThreshold = 50;
-    let scrolled = false;
-    addEventListener("scroll", (event) => {
-        if (!scrolled && window.scrollY > scrollThreshold) {
-            scrolled = true;
-            document.getElementsByTagName("nav").item(0).className = "moved"
-        }
-        if (scrolled && window.scrollY <= scrollThreshold) {
-            scrolled = false;
-            document.getElementsByTagName("nav").item(0).className = ""
-        }
-    })
-</script>
