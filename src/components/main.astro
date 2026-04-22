@@ -111,8 +111,40 @@ import LogoRund from "../assets/logo_rund.png"
             display: flex;
             justify-content: center;
 
-            & > iframe {
-                margin-right: 60px;
+            & > form {
+                display: flex;
+                flex-direction: column;
+
+                & label {
+                    margin-bottom: 8px;
+                }
+                & input[type=email] {
+                    padding: 10px 20px;
+                    background: transparent;
+                    border: 2px solid #000;
+                    border-radius: 8px;
+                    margin-bottom: 12px;
+                }
+
+                & input[type="radio"] {
+                    accent-color: #000;
+                    transform: scale(1.5);
+                    margin-right: 8px;
+                }
+
+                & .disclaimer {
+                    margin-top: 12px;
+                }
+
+                & button {
+                    margin-top: 8px;
+                    background: #000;
+                    color: var(--yellow);
+                    font-size: 20px;
+                    border-radius: 8px;
+                    padding: 16px 20px;
+                    border: none
+                }
             }
 
             & > div {
@@ -162,6 +194,7 @@ import LogoRund from "../assets/logo_rund.png"
                     <li>Kinder-Freizeitangebote</li>
                 </ul>
             </div>
+        </div>
     </section>
 </div>
 <div class="content" id="lesung">
@@ -207,8 +240,38 @@ import LogoRund from "../assets/logo_rund.png"
 </div>
 <div class="content" id="tickets">
     <section>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZms2m2rmUF-aA80KwWVOmTGgjLdBkkggm7E4knef6fAJbXQ/viewform?embedded=true"
-                width="800" height="670" frameborder="0">Wird geladen…
-        </iframe>
+        <form id="ticketForm" action="https://formy.alge-hamburg.de/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282" method="post">
+            <label>eMail Adresse</label>
+            <input type="email" name="email"/>
+            <label>Teilnahme</label>
+            <label><input type="radio" name="inPresence" value="true" checked/> Ich komme vorbei</label>
+            <label><input type="radio" name="inPresence" value="false" /> Ich nehme online teil</label>
+            <div class="disclaimer">
+                Mit der Anmeldung zur Lesung akzeptiere ich den Code of Conduct des <a href="https://alge-hamburg.de/coc">ALGE e.V</a>
+            </div>
+            <button type="submit">ZUR LESUNG ANMELDEN</button>
+        </form>
     </section>
 </div>
+
+<script>
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+
+        fetch(event.target.action, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+            .then(() => {
+                event.target.reset()
+                console.log("Form successfully submitted")
+            })
+            .catch(error => alert("Error Submiting Form"));
+    };
+
+    document.getElementById("ticketForm").addEventListener("submit", handleSubmit);
+</script>
