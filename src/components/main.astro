@@ -1,8 +1,7 @@
 ---
-import Speaker from "./speaker.astro"
-import Lenin from "../assets/lenin.jpeg"
-import Vader from "../assets/vader.jpeg"
 import LogoRund from "../assets/logo_rund.png"
+import BetterPlace from "../assets/betterplace-qr-code.png"
+import Buch from "../assets/buch.webp"
 ---
 <style>
     .content {
@@ -51,22 +50,31 @@ import LogoRund from "../assets/logo_rund.png"
                 & > div {
                     margin-bottom: 20px;
                 }
+
                 line-height: 30px;
                 text-align: justify;
             }
         }
     }
 
-    #speaker {
-        background: #072D60;
+    #spenden {
+        background: #000;
 
         & > section {
+            & div {
+                margin-bottom: 20px;
+            }
+        }
 
+        .betterplace {
             display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            justify-items: center;
-            align-content: center;
+
+            line-height: 30px;
+            text-align: justify;
+            & img {
+                height: 100px;
+                margin-right: 60px;
+            }
         }
 
         color: whitesmoke;
@@ -78,6 +86,23 @@ import LogoRund from "../assets/logo_rund.png"
 
         & > section > div {
             margin-bottom: 30px;
+        }
+
+        & .content {
+            display: flex;
+            flex-direction: row;
+            line-height: 30px;
+            text-align: justify;
+            align-items: flex-start;
+
+            & > div > div {
+                margin-bottom: 20px;
+            }
+
+            & img {
+                margin-left: 60px;
+                width: 460px;
+            }
         }
     }
 
@@ -118,6 +143,7 @@ import LogoRund from "../assets/logo_rund.png"
                 & label {
                     margin-bottom: 8px;
                 }
+
                 & input[type=email] {
                     padding: 10px 20px;
                     background: transparent;
@@ -166,7 +192,7 @@ import LogoRund from "../assets/logo_rund.png"
         <div class="description">
             <h2>Über den Verein</h2>
             <div>
-                <a href="https://alge-hamburg.de">alge-hamburg.de</> | <a>Bluesky</a> | <a>Mastodon</a> | <a>Discord</a>
+                <a href="https://alge-hamburg.de">alge-hamburg.de</a>
             </div>
             <div>Der ALGE e.V. ist ein gemeinnütziger Verein, der sich deutschlandweit für infektionssichere
                 Freizeitangebote und einen infektionssensiblen Alltag stark macht. Wir bieten regelmäßige virtuelle
@@ -200,17 +226,58 @@ import LogoRund from "../assets/logo_rund.png"
 <div class="content" id="lesung">
     <section>
         <h2>Über die Lesung</h2>
-        <div><b>"Die verdrängte Pandemie - Linke Stimmen gegen den Pandemierevisionismus"</b> mit den Herausgebern Frédéric Valin und Paul Schubert.</div>
-        <div>Fast 7 Jahre ist es her, seit der erste Covid-19 Fall bei München entdeckt wurde und die tödliche Covid-19 Pandemie ihren Lauf genommen hat. Seit der Aufhebung der staatlichen Schutzmaßnahmen macht sich in allen politischen Lagern ein Pandemierevisionismus breit. Die Gefahren des Virus werden verharmlost, Gesundheitsschutz lächerlich gemacht, an Long Covid leidende Menschen werden stigmatisiert und die Bedürfnisse von vulnerablen Personen kommen in der Diskussion kaum mehr vor.</div>
-        <div>Die Herausgeber Frédéric Valin und Paul Schubert beleuchten in ihrem Sammelband „Die verdrängte Pandemie – Linke Stimmen gegen den Pandemierevisionismus“ mit Beiträgen von Autor*innen und Wissenschaftler*innen wie Natascha Strobl und Thomas Ebermann u.A. die Rolle von Behindertenfeindlichkeit und Sozialdarwinismus während und nach der Pandemie und fragen, wie gesellschaftliche Teilhabe für alle möglich bleibt. Dazu laden wir euch ganz herzlich zur Lesung mit den Herausgebern ein.</div>
-        <div>Neben einer kurzen Sozialgeschichte der Pandemie werden auch die Rolle des Staates während der Pandemie, die Zustände der Gesundheitssysteme und die mangelnde Versorgung für Long-Covid- und ME/ CFS-Patient*innen behandelt.</div>
-        <div>Der Eintritt ist frei, wir bitten allerdings um Anmeldung. Für die gesamte Veranstaltung gilt der <a>Code of Conduct</a> des ALGE e.V..</div>
+        <div class="content">
+            <div>
+                <div><b>"Die verdrängte Pandemie - Linke Stimmen gegen den Pandemierevisionismus"</b> mit den Herausgebern
+                    Frédéric Valin und Paul Schubert.
+                </div>
+                <div>Fast 7 Jahre ist es her, seit der erste Covid-19 Fall bei München entdeckt wurde und die tödliche Covid-19
+                    Pandemie ihren Lauf genommen hat. Seit der Aufhebung der staatlichen Schutzmaßnahmen macht sich in allen
+                    politischen Lagern ein Pandemierevisionismus breit. Die Gefahren des Virus werden verharmlost,
+                    Gesundheitsschutz lächerlich gemacht, an Long Covid leidende Menschen werden stigmatisiert und die
+                    Bedürfnisse von vulnerablen Personen kommen in der Diskussion kaum mehr vor.
+                </div>
+                <div>Die Herausgeber Frédéric Valin und Paul Schubert beleuchten in ihrem Sammelband „Die verdrängte Pandemie –
+                    Linke Stimmen gegen den Pandemierevisionismus“ mit Beiträgen von Autor*innen und Wissenschaftler*innen wie
+                    Natascha Strobl und Thomas Ebermann u.A. die Rolle von Behindertenfeindlichkeit und Sozialdarwinismus
+                    während und nach der Pandemie und fragen, wie gesellschaftliche Teilhabe für alle möglich bleibt. Dazu laden
+                    wir euch ganz herzlich zur Lesung mit den Herausgebern ein.
+                </div>
+                <div>Neben einer kurzen Sozialgeschichte der Pandemie werden auch die Rolle des Staates während der Pandemie,
+                    die Zustände der Gesundheitssysteme und die mangelnde Versorgung für Long-Covid- und ME/ CFS-Patient*innen
+                    behandelt.
+                </div>
+                <div>Der Eintritt ist frei, wir bitten allerdings um Anmeldung. Für die gesamte Veranstaltung gilt der <a
+                        href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE e.V..
+                </div>
+            </div>
+            <div>
+                <img src={Buch.src}/>
+            </div>
+        </div>
     </section>
 </div>
-<div class="content" id="speaker">
+<div class="content" id="spenden">
     <section>
-        <Speaker image={Lenin.src} name="Lenin Katzi"/>
-        <Speaker image={Vader.src} name="Vader Katzi"/>
+        <h2>Spenden</h2>
+        <div class="betterplace">
+            <div><img src={BetterPlace.src}/></div>
+            <div>
+                <div>Unser Verein setzt sich mit viel Engagement für diese Lesung und weitere Veranstaltungen ein. Damit
+                    wir unsere wichtige Arbeit auch weiterhin fortführen und ausbauen können, sind wir auf eure Hilfe
+                    angewiesen.
+                </div>
+                <div>Jede Spende, egal in welcher Höhe, trägt dazu bei, unsere Projekte zu realisieren um gemeinsam für
+                    ein sicheres Miteinander zu arbeiten.
+                </div>
+                <div>
+                    Unterstützen könnt ihr uns ganz einfach über <a
+                        href="https://www.betterplace.org/de/projects/140795">Betterplace</a>. Eine Spendenquittung für
+                    die Steuer stellen wir natürlich gerne aus.
+                </div>
+            </div>
+        </div>
+        <div></div>
     </section>
 </div>
 <div class="content" id="location">
@@ -240,14 +307,15 @@ import LogoRund from "../assets/logo_rund.png"
 </div>
 <div class="content" id="tickets">
     <section>
-        <form id="ticketForm" action="https://formy.alge-hamburg.de/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282" method="post">
+        <form id="ticketForm" action="https://formy.alge-hamburg.de/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282"
+              method="post">
             <label>eMail Adresse</label>
             <input type="email" name="email"/>
             <label>Teilnahme</label>
             <label><input type="radio" name="inPresence" value="true" checked/> Ich komme vorbei</label>
-            <label><input type="radio" name="inPresence" value="false" /> Ich nehme online teil</label>
+            <label><input type="radio" name="inPresence" value="false"/> Ich nehme online teil</label>
             <div class="disclaimer">
-                Mit der Anmeldung zur Lesung akzeptiere ich den Code of Conduct des <a href="https://alge-hamburg.de/coc">ALGE e.V</a>
+                Mit der Anmeldung akzeptierst du den <a href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE e.V.
             </div>
             <button type="submit">ZUR LESUNG ANMELDEN</button>
         </form>
@@ -259,18 +327,20 @@ import LogoRund from "../assets/logo_rund.png"
         event.preventDefault();
 
         const myForm = event.target;
-        const formData = new FormData(myForm);
 
         fetch(event.target.action, {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: new FormData(myForm)
         })
             .then(() => {
                 event.target.reset()
                 console.log("Form successfully submitted")
             })
-            .catch(error => alert("Error Submiting Form"));
+            .catch(error => {
+                console.log(error);
+                console.log("Error Submiting Form", error)
+            });
     };
 
     document.getElementById("ticketForm").addEventListener("submit", handleSubmit);
