@@ -1,0 +1,56 @@
+---
+import Logo from "../../assets/logo_rund.png"
+---
+<style>
+    #about {
+        background: var(--white);
+
+        & > div {
+            display: flex;
+
+            & img {
+                height: 200px;
+                margin-right: 50px;
+            }
+        }
+    }
+</style>
+<section class="content-container" id="about">
+    <div>
+        <img src={Logo.src}>
+        <div class="text-content">
+            <h2>Über den Verein</h2>
+            <div>
+                <a href="https://alge-hamburg.de">alge-hamburg.de</a>
+            </div>
+            <div>Der ALGE e.V. ist ein gemeinnütziger Verein, der sich deutschlandweit für infektionssichere
+                Freizeitangebote und einen infektionssensiblen Alltag stark macht. Wir bieten regelmäßige virtuelle
+                Aktivitäten sowie Präsenz-Veranstaltungen mit individuell angepassten Infektionsschutzkonzepten (Tests,
+                Masken, Luftfilter, …).
+            </div>
+            <div>
+                Wir wollen Menschen zusammenbringen, die sich aus vielfältigen Gründen vor Infektionen schützen wollen
+                oder müssen. Unser Ziel ist es, gemeinsam Infektionsschutz (vor-)zuleben und zu zeigen, wie
+                Infektionsschutz ein selbstverständlicher Teil von Freizeitaktivitäten sein kann.
+            </div>
+            <div>Wir bieten digitale Veranstaltungen wie:
+                <ul>
+                    <li>Brettspielabende</li>
+                    <li>Klönabende</li>
+                    <li>Kreativ-Cafés</li>
+                    <li>Brunch</li>
+                </ul>
+            </div>
+            <div>
+                und infektionssensible Präsenz-Veranstaltungen wie:
+                <ul>
+                    <li>Wander- und Klettergruppe</li>
+                    <li>Vernetzungstreffen</li>
+                    <li>Testessen zu Hamburgs besten Franzbrötchen</li>
+                    <li>Weihnachtsfeier</li>
+                    <li>Kinder-Freizeitangebote</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

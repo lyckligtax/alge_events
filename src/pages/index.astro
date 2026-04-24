@@ -1,6 +1,7 @@
 ---
+import Nav from "../components/nav.astro"
 import Header from "../components/header.astro";
-import Main from "../components/main.astro";
+import Main from "../components/main/main.astro";
 import Footer from "../components/footer.astro";
 ---
 <html lang="en">
@@ -10,31 +11,76 @@ import Footer from "../components/footer.astro";
     <title>ALGE - Lesung</title>
 </head>
 <body>
+<Nav/>
 <Header></Header>
 <Main></Main>
 <Footer></Footer>
 </body>
 </html>
 
-
-<style>
+<style is:global>
     :root {
         --content-width: 1340px;
         --yellow: #F4BB46;
+        --white: #F8F7F2;
+        --blue: #002141;
+        --lightblue: #072D60;
     }
-    * {
-        margin: 0;
+
+    html {
+        width: 100%;
+        overflow: auto;
         padding: 0;
-        text-decoration: none;
-        color: black;
+        margin: 0;
     }
 
     body {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
         font-family: "Open Sans Condensed", sans-serif;
         font-optical-sizing: auto;
         font-weight: 300;
         font-style: normal;
         font-variation-settings: "wdth" 100;
         overflow-x: hidden;
+    }
+
+    .content-container {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+
+        & > * {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            max-width: var(--content-width);
+            padding: 60px 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .text-content {
+        line-height: 30px;
+        text-align: justify;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+
+        & > h2:is(:first-child) {
+            margin-top: 0;
+        }
+
+        && > h2 + * {
+            margin-top: 0;
+        }
+
+        & > *:not(:first-child) {
+            margin-top: 20px;
+        }
     }
 </style>

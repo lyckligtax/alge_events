@@ -9,16 +9,15 @@ import Logo from "../assets/logo.png"
         <NavItem name="DIE LESUNG" link="#lesung"/>
         <NavItem name="SPENDEN" link="#spenden"/>
         <NavItem name="LOCATION" link="#location"/>
-        <a class="ticketLink" href="#tickets">SEI DABEI</a>
+        <a class="ticketLink" href="#registration">SEI DABEI</a>
     </div>
 </nav>
 
 <style>
     nav {
         z-index: 1;
-        position: fixed;
+        position: sticky;
         top: 0;
-        left: 0;
         background: black;
         width: 100%;
         font-size: 20px;
@@ -43,11 +42,6 @@ import Logo from "../assets/logo.png"
         margin-left: 20px;
         margin-right: auto;
         height: 30px;
-    }
-
-
-    nav.moved {
-        background: black;
     }
 
     .ticketLink {
