@@ -7,13 +7,19 @@
 <style>
     a.nav_item {
         color: white;
-        margin-right: 40px;
+        margin-right: 3rem;
         text-decoration: none;
 
         &:hover {
             color: #F4BB46;
             text-decoration: underline;
             text-underline-offset: 10px;
+        }
+    }
+    @media only screen and (hover: none) and (pointer: coarse){
+        a.nav_item {
+            display: none;
+
         }
     }
 </style>

@@ -9,8 +9,24 @@ import Logo from "../../assets/logo_rund.png"
             display: flex;
 
             & img {
-                height: 200px;
-                margin-right: 50px;
+                height: 15rem;
+                width: 15rem;
+                margin-right: 3rem;
+            }
+        }
+    }
+
+    @media only screen and (hover: none) and (pointer: coarse) {
+        #about > div {
+            flex-direction: column;
+
+            & img {
+                padding: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1.5rem;
+                width: 18rem;
+                height: 18rem;
             }
         }
     }
