@@ -3,20 +3,19 @@ import NavItem from "./nav_item.astro"
 import Logo from "../assets/logo.png"
 ---
 <nav>
-    <div>
-        <img id="logo" src={Logo.src}/>
-        <NavItem name="ÜBER UNS" link="#about"/>
-        <NavItem name="DIE LESUNG" link="#lesung"/>
-        <NavItem name="SPENDEN" link="#spenden"/>
-        <NavItem name="LOCATION" link="#location"/>
-        <a class="ticketLink" href="#registration">SEI DABEI</a>
-    </div>
+    <img id="logo" src={Logo.src}/>
+    <NavItem name="ÜBER UNS" link="#about"/>
+    <NavItem name="DIE LESUNG" link="#lesung"/>
+    <NavItem name="SPENDEN" link="#spenden"/>
+    <NavItem name="LOCATION" link="#location"/>
+    <a class="ticketLink" href="#registration">SEI DABEI</a>
 </nav>
 
 <style>
     nav {
         z-index: 1;
-        position: sticky;
+        height: 5rem;
+        position: fixed;
         top: 0;
         background: black;
         width: 100%;
@@ -26,16 +25,10 @@ import Logo from "../assets/logo.png"
         padding: 1rem 0;
         display: flex;
         align-items: center;
-        justify-content: center;
-        & > * {
-             display: flex;
-             align-content: center;
-             align-items: center;
-             box-sizing: border-box;
-             justify-content: right;
-             width: 100%;
-             max-width: var(--content-width);
-         }
+        align-content: center;
+        box-sizing: border-box;
+        justify-content: right;
+        max-width: var(--content-width);
     }
 
     #logo {
@@ -55,10 +48,11 @@ import Logo from "../assets/logo.png"
         margin-right: 3rem;
     }
 
-    @media only screen and (hover: none) and (pointer: coarse){
+    @media only screen and (hover: none) and (pointer: coarse) {
         .ticketLink {
             display: none;
         }
+
         #logo {
             margin-left: 1rem;
         }
