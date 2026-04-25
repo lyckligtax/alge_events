@@ -17,11 +17,13 @@
                 }
 
                 & input[type=email] {
-                    padding: 10px 20px;
+                    padding: 1rem 2rem;
                     background: transparent;
                     border: 2px solid #000;
                     border-radius: 8px;
-                    margin-bottom: 12px;
+                    margin-bottom: 1rem;
+                    line-height: 1.2rem;
+                    font-size: 1.2rem;
                 }
 
                 & input[type="radio"] {
@@ -38,19 +40,34 @@
                     margin-top: 8px;
                     background: #000;
                     color: var(--yellow);
-                    font-size: 20px;
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
                     border-radius: 8px;
-                    padding: 16px 20px;
-                    border: none
+                    padding: 1rem 2rem;
+                    border: 2px solid #000;
                 }
             }
+        }
+
+        & .formHidden {
+            display: none;
+        }
+
+        & .message {
+            margin-top: 8px;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            border: 2px solid #000;
+            text-align: center;
         }
     }
 </style>
 <section class="content-container" id="registration">
     <div class="text-content">
         <h2>Registrierung</h2>
-        <form id="ticketForm" action="https://formy.alge-hamburg.de/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282"
+        <form id="registrationForm" action="https://formy.alge-hamburg.de/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282"
               method="post">
             <label>eMail Adresse</label>
             <input type="email" name="email"/>
@@ -60,7 +77,19 @@
             <div class="disclaimer">
                 Mit der Anmeldung akzeptierst du den <a href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE e.V.
             </div>
-            <button type="submit">ZUR LESUNG ANMELDEN</button>
+            <div id="registrationOSuccess" class="formHidden message">
+                Vielen Dank für deine Anmeldung.
+            </div>
+            <div id="registrationError" class="formHidden message">
+                Leider gab es einen Fehler bei der Anmeldung. Bitte probiere es später erneut oder melde dich per <a href="mailto:info@alge-hamburg.de">Mail</a>
+            </div>
+            <button id="registrationSubmit" type="submit">ZUR LESUNG ANMELDEN</button>
+            <div id="registrationOSuccess" class="formHidden message">
+                Vielen Dank für deine Anmeldung
+            </div>
+            <div id="registrationError" class="formHidden message">
+                Leider gab es einen Fehler bei der Anmeldung. Bitte probiere es später erneut oder melde dich bei uns per <a href="mailto:info@alge-hamburg.de">Mail</a>
+            </div>
         </form>
     </div>
 </section>
@@ -70,21 +99,22 @@
         event.preventDefault();
 
         const myForm = event.target;
+        const formData = new FormData(myForm);
 
         fetch(event.target.action, {
             method: "POST",
-            headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body: new FormData(myForm)
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
         })
             .then(() => {
                 event.target.reset()
-                console.log("Form successfully submitted")
+                document.getElementById("registrationOSuccess")?.classList.remove("formHidden");
             })
             .catch(error => {
                 console.log(error);
-                console.log("Error Submiting Form", error)
+                document.getElementById("registrationError")?.classList.remove("formHidden");
             });
     };
 
-    document.getElementById("ticketForm").addEventListener("submit", handleSubmit);
+    document.getElementById("registrationForm").addEventListener("submit", handleSubmit);
 </script>
