@@ -1,5 +1,4 @@
 ---
-import Buch from "../../assets/buch.webp";
 ---
 <style>
     #lesung {
@@ -7,43 +6,26 @@ import Buch from "../../assets/buch.webp";
         color: var(--white);
     }
 
-    img {
-        margin-left: 3rem;
-        width: 30rem;
-        max-width: 50%;
-    }
-
-    @media only screen and (hover: none) and (pointer: coarse){
-        #lesung > div {
-            flex-direction: column;
-        }
-        img {
-            margin-left: 0;
-            margin-top: 3rem;
-            width: 100%;
-            max-width: 100%;
-        }
+    @media only screen and (hover: none) and (pointer: coarse) {
     }
 </style>
 <section class="content-container" id="lesung">
-    <div>
-        <div class="text-content">
-            <h2>Über die Lesung</h2>
-            <div><b>"Die verdrängte Pandemie - Linke Stimmen gegen den Pandemierevisionismus"</b> mit den Autoren Frédéric Valin und Paul Schubert.
-            </div>
-            <div>
-                Seit der Aufhebung der staatlichen Schutzmaßnahmen macht sich in allen politischen Lagern ein Pandemierevisionismus breit. Die Gefahr, die vom Virus ausging und weiter ausgeht, wird kleingeredet, der Gesundheitsschutz als übertrieben bezeichnet oder sogar ins Lächerliche gezogen, die Notwendigkeit weiterer Prävention negiert, an Long Covid leidende Menschen werden stigmatisiert und die Bedürfnisse von vulnerablen Personen kommen in der Diskussion kaum mehr vor.
-            </div>
-            <div>
-                In diesem multidisziplinären Sammelband wird dem Revisionismus auf den Grund gegangen. Autor*innen und Wissenschaftler*innen aus den Bereichen Medizin, Evolutionsbiologie, Pflege, Arbeits- und Gesundheitswissenschaften, Gewerkschaftsarbeit, Philosophie, Politikwissenschaften kommen dabei zu Wort. Neben einer kurzen Sozialgeschichte der Pandemie werden auch die kapitalistische Seuchenproduktion, die Rolle des Staates während der Pandemie, die Zustände der Gesundheitssysteme, ideologische Kollateralschäden der Durchseuchung und die mangelnde Versorgung für Long-Covid- und ME/ CFS-Patient*innen behandelt.
-            </div>
-            <div>
-                Ausgehend vom Befund, dass die gesamte Pandemie hindurch Behindertenfeindlichkeit und Sozialdarwinismus eine tragende Rolle spielen, liegt ein Fokus auch auf der Frage, was geschehen muss, damit vulnerable Personen ungefährdet Teil dieser Gesellschaft sein können.
-            </div>
-            <div>Der Eintritt ist frei, wir bitten allerdings um Anmeldung. Für die gesamte Veranstaltung gilt der <a
-                    href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE e.V..
-            </div>
+    <div class="text-content">
+        <h2>Über die Lesung</h2>
+        <div><b>"Die verdrängte Pandemie - Linke Stimmen gegen den Pandemierevisionismus"</b> mit dem Herausgeber
+            Frédéric Valin.
         </div>
-        <img src={Buch.src}/>
+        <div>
+            Um die Lesung möglichst infektiosarm zu gestalten werden folgende Maßnahmen umgesetzt
+            <ul>
+                <li>Maskenpflicht (FFP2  oder höere Filtration)</li>
+                <li>Masken werden kostenlos vor Ort zur Verfügung gestellt</li>
+                <li>Aranet CO2 Messungen mit regelmäßigem Lüften</li>
+                <li>hochwertige Luftfilter</li>
+            </ul>
+        </div>
+        <div>Der Eintritt ist frei, wir bitten um Anmeldung. Für die gesamte Veranstaltung gilt der <a
+                href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE e.V..
+        </div>
     </div>
 </section>

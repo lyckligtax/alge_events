@@ -10,6 +10,21 @@ import BetterPlace from "../../assets/betterplace-qr-code.png"
             height: 10rem;
             margin-right: 3rem;
         }
+
+        & .spendenLink {
+            border: 2px solid #F4BB46;
+            background: #F4BB46;
+            border-radius: 0.8rem;
+            padding: 0.5rem 1.5rem;
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 3rem;
+        }
+
+        & .spendenLinkContainer {
+            margin-top: 2rem;
+        }
     }
 
     @media only screen and (hover: none) and (pointer: coarse) {
@@ -17,12 +32,11 @@ import BetterPlace from "../../assets/betterplace-qr-code.png"
             flex-direction: column-reverse;
 
             & img {
-                padding: 0;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 3rem;
-                width: 80%;
-                height: 80%;
+                display: none;
+            }
+
+            & .spendenLink {
+                width: 100%;
             }
         }
     }
@@ -39,10 +53,8 @@ import BetterPlace from "../../assets/betterplace-qr-code.png"
             <div>Jede Spende, egal in welcher Höhe, trägt dazu bei, unsere Projekte zu realisieren um gemeinsam für
                 ein sicheres Miteinander zu arbeiten.
             </div>
-            <div>
-                Unterstützen könnt ihr uns ganz einfach über <a
-                    href="https://www.betterplace.org/de/projects/140795">Betterplace</a>. Eine Spendenquittung für
-                die Steuer stellen wir natürlich gerne aus.
+            <div class="spendenLinkContainer">
+                <a href="https://www.betterplace.org/de/donate/platform/projects/140795?need_id=769244" class="spendenLink">JETZT SPENDEN</a>
             </div>
         </div>
     </div>

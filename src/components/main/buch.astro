@@ -1,0 +1,44 @@
+---
+import Buch from "../../assets/buch.webp";
+---
+<style>
+    #buch {
+        background: #BADCE0;
+        color: black;
+    }
+
+    img {
+        margin-left: 3rem;
+        width: 25rem;
+        max-width: 50%;
+    }
+
+    @media only screen and (hover: none) and (pointer: coarse){
+        #lesung > div {
+            flex-direction: column;
+        }
+        img {
+            margin-left: 0;
+            margin-top: 3rem;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+</style>
+<section class="content-container" id="buch">
+    <div>
+        <div class="text-content">
+            <h2>Über das Buch</h2>
+            <div>
+                Seit der Aufhebung der staatlichen Schutzmaßnahmen macht sich in allen politischen Lagern ein Pandemierevisionismus breit. Die Gefahr, die vom Virus ausging und weiter ausgeht, wird kleingeredet, der Gesundheitsschutz als übertrieben bezeichnet oder sogar ins Lächerliche gezogen, die Notwendigkeit weiterer Prävention negiert, an Long Covid leidende Menschen werden stigmatisiert und die Bedürfnisse von vulnerablen Personen kommen in der Diskussion kaum mehr vor.
+            </div>
+            <div>
+                In diesem multidisziplinären Sammelband wird dem Revisionismus auf den Grund gegangen. Autor*innen und Wissenschaftler*innen aus den Bereichen Medizin, Evolutionsbiologie, Pflege, Arbeits- und Gesundheitswissenschaften, Gewerkschaftsarbeit, Philosophie, Politikwissenschaften kommen dabei zu Wort. Neben einer kurzen Sozialgeschichte der Pandemie werden auch die kapitalistische Seuchenproduktion, die Rolle des Staates während der Pandemie, die Zustände der Gesundheitssysteme, ideologische Kollateralschäden der Durchseuchung und die mangelnde Versorgung für Long-Covid- und ME/ CFS-Patient*innen behandelt.
+            </div>
+            <div>
+                Ausgehend vom Befund, dass die gesamte Pandemie hindurch Behindertenfeindlichkeit und Sozialdarwinismus eine tragende Rolle spielen, liegt ein Fokus auch auf der Frage, was geschehen muss, damit vulnerable Personen ungefährdet Teil dieser Gesellschaft sein können.
+            </div>
+        </div>
+        <img src={Buch.src}/>
+    </div>
+</section>
