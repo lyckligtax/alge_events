@@ -4,14 +4,25 @@ import Logo from "../assets/logo.png"
 ---
 <nav>
     <img id="logo" src={Logo.src}/>
-    <NavItem name="ÜBER UNS" link="#about"/>
     <NavItem name="DAS BUCH" link="#buch"/>
+    <NavItem name="DIE LESUNG" link="#lesung"/>
+    <NavItem name="ÜBER UNS" link="#about"/>
     <NavItem name="SPENDEN" link="#spenden"/>
     <NavItem name="LOCATION" link="#location"/>
     <a class="ticketLink" href="#registration">SEI DABEI</a>
+    <button class="menuIcon" onclick="document.getElementById('mobileNav').classList.toggle('active');">☰</button>
 </nav>
+<div id="mobileNav">
+    <button class="menuIcon" onclick="document.getElementById('mobileNav').classList.toggle('active');">✖</button>
+    <NavItem name="DAS BUCH" link="#buch"/>
+    <NavItem name="DIE LESUNG" link="#lesung"/>
+    <NavItem name="ÜBER UNS" link="#about"/>
+    <NavItem name="SPENDEN" link="#spenden"/>
+    <NavItem name="LOCATION" link="#location"/>
+    <a class="ticketLink" href="#registration">SEI DABEI</a>
+</div>
 
-<style>
+<style is:global>
     nav {
         z-index: 1;
         height: 5rem;
@@ -28,6 +39,44 @@ import Logo from "../assets/logo.png"
         align-content: center;
         box-sizing: border-box;
         justify-content: right;
+    }
+
+    #mobileNav {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        background: var(--blue);
+        align-items: center;
+
+        &.active {
+            display: flex;
+        }
+
+        & .nav_item {
+            display: block !important;
+            font-size: 2rem;
+            color: var(--yellow);
+            margin-top: 2rem;
+        }
+
+        & .menuIcon {
+            margin: 1rem 2.5rem 0 auto;
+        }
+    }
+
+    .menuIcon {
+        font-size: 2.5rem;
+        display: none;
+        margin-right: 2.5rem;
+        color: var(--white);
+        background: none;
+        border: none;
     }
 
     #logo {
@@ -54,6 +103,10 @@ import Logo from "../assets/logo.png"
 
         #logo {
             margin-left: 1rem;
+        }
+
+        .menuIcon {
+            display: block;
         }
     }
 </style>
