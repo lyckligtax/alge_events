@@ -32,6 +32,22 @@
                     margin-right: 8px;
                 }
 
+                & input[type="checkbox"] {
+                    accent-color: #000;
+                    transform: scale(1.5);
+                    margin-right: 8px;
+                }
+
+                & textarea {
+                    padding: 1rem 2rem;
+                    background: transparent;
+                    border: 2px solid #000;
+                    border-radius: 8px;
+                    margin-bottom: 1rem;
+                    line-height: 1.2rem;
+                    font-size: 1.2rem;
+                }
+
                 & .disclaimer {
                     margin-top: 12px;
                 }
@@ -68,44 +84,66 @@
 <section class="content-container" id="registration">
     <div class="text-content">
         <h2>Registrierung</h2>
-        <form id="registrationForm" action="https://formy.alge-hamburg.de/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282"
+        <form id="registrationForm" action="http://localhost:8088/register/df9d7b1b-e08c-4ff6-aeee-818a976ef282"
               method="post">
             <label>Mail Adresse</label>
             <input type="email" name="email"/>
             <label>Teilnahme</label>
-            <label><input type="radio" name="inPresence" value="true" checked/> Ich komme vorbei und trage im Gebäude eine FFP2 Maske.</label>
+            <label><input type="radio" name="inPresence" value="true" checked/> Ich komme vorbei und trage im Gebäude
+                eine FFP2 Maske.</label>
             <label><input type="radio" name="inPresence" value="false"/> Ich nehme online teil</label>
+            <label><input type="checkbox" name="accessibility"/> Ich habe weitere Bedürfnisse an die
+                Barrierefreiheit (bitte unter weitere Informationen mitteilen)</label>
+            <label id="label_information">Weitere Informationen für uns</label>
+            <textarea name="information" aria-labelledby="label_information" rows="4"/>
             <div class="disclaimer">
-                Mit der Anmeldung akzeptierst du den <a href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE e.V.
+                Mit der Anmeldung akzeptierst du den <a href="https://alge-hamburg.de/coc">Code of Conduct</a> des ALGE
+                e.V.
             </div>
             <div id="registrationOSuccess" class="formHidden message">
                 Vielen Dank für deine Anmeldung.
             </div>
             <div id="registrationError" class="formHidden message">
-                Leider gab es einen Fehler bei der Anmeldung. Bitte probiere es später erneut oder melde dich per <a href="mailto:info@alge-hamburg.de">Mail</a>
+                Leider gab es einen Fehler bei der Anmeldung. Bitte probiere es später erneut oder melde dich per <a
+                    href="mailto:info@alge-hamburg.de">Mail</a>
             </div>
             <button id="registrationSubmit" type="submit">ZUR LESUNG ANMELDEN</button>
             <div id="registrationOSuccess" class="formHidden message">
                 Vielen Dank für deine Anmeldung
             </div>
             <div id="registrationError" class="formHidden message">
-                Leider gab es einen Fehler bei der Anmeldung. Bitte probiere es später erneut oder melde dich bei uns per <a href="mailto:info@alge-hamburg.de">Mail</a>
+                Leider gab es einen Fehler bei der Anmeldung. Bitte probiere es später erneut oder melde dich bei uns
+                per <a href="mailto:info@alge-hamburg.de">Mail</a>
             </div>
         </form>
     </div>
 </section>
 
 <script>
+    interface FormData {
+        email: string;
+        form_content: {
+            inPresence: boolean;
+            accessibility: boolean;
+            information: string;
+        }
+    }
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const myForm = event.target;
-        const formData = new FormData(myForm);
-
+        const formData = new FormData(event.target);
+        const form = {
+            email: formData.get('email'),
+            form_content: {
+                inPresence: formData.get('inPresence') === 'true',
+                accessibility: formData.get('accessibility') === 'on',
+                information: formData.get('information'),
+            }
+        };
         fetch(event.target.action, {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(form)
         })
             .then(() => {
                 event.target.reset()
